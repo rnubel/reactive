@@ -1,6 +1,10 @@
 require 'bootstrap'
 
-Given /I know of one entity/ do 
+Given /^I have a personality of:$/ do |table|
+  
+end
+
+Given /^I know of one entity$/ do 
   @entity = Entity.new
 end
 
