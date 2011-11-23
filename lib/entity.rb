@@ -3,5 +3,7 @@
 # to provide.
 
 class Entity
+  def perform(action)
 
+  end
 end
