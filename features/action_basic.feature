@@ -4,7 +4,10 @@ Feature: Actions
   
   Scenario:
   Given I know of one entity
+  And I have feelings towards it currently as:
+    | test  |   1   |
   And the entity performs the action Murder
-  Then my feelings toward the entity should be ???
+  Then my feelings toward the entity should be:
+    | test  |   2   |
 
 
