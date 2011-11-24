@@ -4,12 +4,15 @@ Feature: Actions
   
   Scenario:
   Given I have a personality of:
-    | test  |   1   |
+    | empathy  |   1   |
+    | violence |   0   |
   And I know of one entity
   And I have feelings towards it currently as:
-    | test  |   1   |
-  And the entity performs the action Murder
+    | like  |   1   |
+    | fear  |   0   |
+  When the entity performs the action Murder
   Then my feelings toward the entity should be:
-    | test  |   2   |
+    | like  |   0   |
+    | fear  |   1   |
 
 
