@@ -1,4 +1,4 @@
-require 'bootstrap'
+require File.expand_path('bootstrap')
 
 Given /^I have a personality of:$/ do |table|
   @personality = Personality.new(table.rows_hash)
