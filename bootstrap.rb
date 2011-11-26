@@ -1,3 +1,3 @@
 Dir["lib/*.rb"].each do |file|
-  require_relative file
+  require File.expand_path(file)
 end
