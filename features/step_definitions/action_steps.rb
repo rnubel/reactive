@@ -1,24 +1,26 @@
 require File.expand_path('bootstrap')
 
 Given /^I have a personality of:$/ do |table|
-  @personality = Personality.new(table.rows_hash)
+  @self = Self.new(Personality.new(table.rows_hash))
 end
 
-Given /^I know of one entity$/ do 
-  @entity = Entity.new
+Given /^I know of an entity (\w+)$/ do |name|
+  @entities[name] = Entity.new(:name => name)
 end
 
-Given /^I have feelings towards it currently as:$/ do |table|
-  @entity.feelings_toward = Feelings.new(table.rows_hash)
+Given /^I have feelings towards (\w+) currently as:$/ do |name, table|
+  @entities[name].feelings_toward = Feelings.new(table.rows_hash)
 end
 
-Given /^the entity performs the action Murder$/ do
-  @entity.perform(Actions::Murder.new)
+Given /^(\w+) performs the action Murder on (\w+)$/ do |name_src, name_dst|
+  action = Action::Murder.new(:source       => @entities[name_src],
+                              :destination  => @entities[name_dst])
+  @self.process_action(action)
 end
 
-Then /^my feelings toward the entity should be:$/ do |table|
+Then /^my feelings toward (\w+) should be:$/ do |name, table|
   expected_feelings = Feelings.new(table.rows_hash)
 
-  @entity.feelings_toward.should == expected_feelings
+  @self.feelings_toward(@entities[name]).should == expected_feelings
 end
 
