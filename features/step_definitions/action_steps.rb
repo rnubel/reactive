@@ -1,6 +1,7 @@
 require File.expand_path('bootstrap')
 
 Given /^I have a personality of:$/ do |table|
+  @entities = {}
   @self = Self.new(Personality.new(table.rows_hash))
 end
 
@@ -9,7 +10,7 @@ Given /^I know of an entity (\w+)$/ do |name|
 end
 
 Given /^I have feelings towards (\w+) currently as:$/ do |name, table|
-  @entities[name].feelings_toward = Feelings.new(table.rows_hash)
+  @self.update_feelings_toward(@entities[name], Feelings.new(table.rows_hash))
 end
 
 Given /^(\w+) performs the action Murder on (\w+)$/ do |name_src, name_dst|

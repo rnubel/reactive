@@ -3,6 +3,12 @@
 # to provide.
 
 class Entity
+  attr_accessor :name
+
+  def initialize(args)
+    @name = args[:name] || ""
+  end
+
   def perform(action)
 
   end
