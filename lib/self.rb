@@ -11,4 +11,7 @@ class Self
     @personality = personality
     @emotions = Emotions.new
   end
+
+  def react_to(action)
+  end
 end

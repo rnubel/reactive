@@ -13,6 +13,14 @@ describe Self do
 
     s.should respond_to(:emotions)
   end
+
+  it "should be able to react to an Action" do
+    s = Self.new(mock(Personality))
+    a = mock(Action)
+
+    lambda { s.react_to(a) }.should_not raise_error
+  end
+
 end
 
 
