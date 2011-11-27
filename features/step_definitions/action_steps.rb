@@ -14,7 +14,7 @@ Given /^I have feelings towards (\w+) currently as:$/ do |name, table|
 end
 
 Given /^(\w+) performs the action Murder on (\w+)$/ do |name_src, name_dst|
-  action = Action::Murder.new(:source       => @entities[name_src],
+  action = Actions::Murder.new(:source       => @entities[name_src],
                               :destination  => @entities[name_dst])
   @self.process_action(action)
 end
