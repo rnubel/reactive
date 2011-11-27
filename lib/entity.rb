@@ -4,8 +4,9 @@
 
 class Entity
   attr_accessor :name
+  attr_accessor :feelings_toward
 
-  def initialize(args)
+  def initialize(args={})
     @name = args[:name] || ""
   end
 
