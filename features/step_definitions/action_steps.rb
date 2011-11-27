@@ -10,7 +10,7 @@ Given /^I know of an entity (\w+)$/ do |name|
 end
 
 Given /^I have feelings towards (\w+) currently as:$/ do |name, table|
-  @self.update_feelings_toward(@entities[name], Feelings.new(table.rows_hash))
+  @entities[name].feelings_toward = Feelings.new(table.rows_hash)
 end
 
 Given /^(\w+) performs the action Murder on (\w+)$/ do |name_src, name_dst|
@@ -22,6 +22,6 @@ end
 Then /^my feelings toward (\w+) should be:$/ do |name, table|
   expected_feelings = Feelings.new(table.rows_hash)
 
-  @self.feelings_toward(@entities[name]).should == expected_feelings
+  @entities[name].feelings_toward.should == expected_feelings
 end
 
