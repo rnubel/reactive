@@ -1,0 +1,25 @@
+Steps involved in reacting to an action:
+  
+  - Determine intensity/classification?
+  - Get effect transformation from action
+  - Apply effect to Self
+
+
+Thoughts:
+
+  - Only Self + Action can describe full context
+  - But full context affects Action signficantly
+    - Feelings of Self regarding who got Murdered, for example
+  - But only the Action know *how* that difference affects it
+    - Self can't be expected to determine intensity just off of src and dst... can it?
+
+Can we determine an intensity coefficient generically?
+
+  - Self compares F_src vs F_dst to obtain Intensity...
+  - Or: compute a reduced score for src and dst. Action can use this score as needed
+      - Can extend score with mult values in future
+      - Score is interface to wrap Feelings/anything else
+
+So: to abstract that Self's feelings towards an entity are complex and may not just be
+wrapped by the Feelings class, we create a Sentiment interface as a layer of abstraction.
+  
