@@ -22,4 +22,15 @@ describe Entity do
 
     e.feelings_toward.should == f
   end
+
+  it "should compute a Self's sentiment towards it" do
+    e = Entity.new
+    f = mock(Feelings)
+    e.feelings_toward = f
+
+    # Computation should check these two fields
+    f.expects(:to_hash).returns({:like => 1, :fear => 0})
+
+    e.sentiment_toward.should == Sentiment.new(1)
+  end
 end
