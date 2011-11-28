@@ -12,4 +12,10 @@ describe Feelings do
 
     f[:a].should == 1
   end
+
+  it "should provide an accessor to access a key/value hash" do
+    f = Feelings.new(:a => 1)
+
+    f.to_hash.should == {:a => 1}
+  end
 end

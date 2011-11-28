@@ -10,4 +10,7 @@ class Feelings
     @attributes[key]
   end
 
+  def to_hash
+    @attributes
+  end
 end
