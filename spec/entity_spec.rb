@@ -17,7 +17,7 @@ describe Entity do
 
   it "should store a Self's feelings towards it" do
     e = Entity.new
-    f = mock(Feelings)
+    f = mock()
     e.feelings_toward = f
 
     e.feelings_toward.should == f
@@ -25,7 +25,7 @@ describe Entity do
 
   it "should compute a Self's sentiment towards it" do
     e = Entity.new
-    f = mock(Feelings)
+    f = mock()
     e.feelings_toward = f
 
     # Computation should check these two fields
