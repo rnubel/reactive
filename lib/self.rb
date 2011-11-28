@@ -12,6 +12,13 @@ class Self
     @emotions = Emotions.new
   end
 
-  def react_to(action)
+  def react_to!(action)
+    # Get the effect.
+    effect = action.compute_effect
+
+    # Apply it to our emotions.
+    effect.update_emotions(self.emotions)
+
+    # TODO: apply to entities involved.
   end
 end
