@@ -15,6 +15,9 @@ GEM
       json (>= 1.4.6)
     highline (1.6.8)
     json (1.6.1)
+    metaclass (0.0.1)
+    mocha (0.10.0)
+      metaclass (~> 0.0.1)
     term-ansicolor (1.0.7)
 
 PLATFORMS
@@ -24,3 +27,4 @@ PLATFORMS
 DEPENDENCIES
   cucumber
   highline
+  mocha
