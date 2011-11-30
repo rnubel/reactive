@@ -12,4 +12,14 @@ describe Actions::Murder do
 
     action.compute_effect.should be_an(Effect)
   end
+
+  it "should compute the correct effect given a specific context" do
+    e_src = mock()
+    e_dst = mock()
+    action = Actions::Murder.new({:source => e_src, :destination => e_dst})
+
+    expected_effect = :totally_the_right_effect
+
+    action.compute_effect.should == expected_effect
+  end
 end
