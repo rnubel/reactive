@@ -7,4 +7,9 @@ describe Actions::Murder do
     action.should_not be_nil
   end
 
+  it "should compute its effect as an Effect" do
+    action = Actions::Murder.new({})
+
+    action.compute_effect.should be_an(Effect)
+  end
 end
