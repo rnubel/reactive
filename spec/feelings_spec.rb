@@ -18,4 +18,12 @@ describe Feelings do
 
     f.to_hash.should == {:a => 1}
   end
+
+  it "should update a single attribute by a given delta" do
+    f = Feelings.new(:a => 1)
+
+    f.update_attribute_by(:a, -1)
+
+    f[:a].should == 0
+  end
 end

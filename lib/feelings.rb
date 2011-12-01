@@ -13,4 +13,8 @@ class Feelings
   def to_hash
     @attributes
   end
+
+  def update_attribute_by(attr, value)
+    @attributes[attr] += value
+  end
 end
