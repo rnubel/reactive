@@ -27,6 +27,16 @@ describe Effect do
     e.update_emotions(em)
   end
 
+  it "should update feelings for each entity per its feelings_change" do
+    f = mock()
+    f.expects(:change_attribute_by).with(:asdf, 1).returns(nil)
+    ent = mock(:feelings_toward => f)
+
+    e = Effect.new({}, {ent => {:asdf => 1}})
+
+    e.update_feelings
+  end
+
   it "should compare via the equality operator to other Effects" do
     Effect.new( {:blah => 1}, {:arg => 0} ).should == 
        Effect.new( {:blah => 1}, {:arg => 0} ) 

@@ -15,6 +15,14 @@ class Effect
     end
   end
 
+  def update_feelings
+    self.feelings_change.each do |entity, change|
+      change.each do |attribute, value|
+        entity.feelings_toward.change_attribute_by(attribute, value)
+      end
+    end
+  end
+
   def ==(other)
     self.emotions_change == other.emotions_change &&
     self.feelings_change == other.feelings_change
