@@ -7,8 +7,8 @@ module Actions
     end
 
     def compute_effect
-      sentiment_src = @source_entity.sentiment_towards
-      sentiment_dst = @destination_entity.sentiment_towards
+      sentiment_src = @source_entity.sentiment_toward
+      sentiment_dst = @destination_entity.sentiment_toward
 
       # TODO: pull up
       feelings_change_base = {

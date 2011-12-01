@@ -4,8 +4,8 @@ describe Actions::Murder do
   before :each do
     # Mock out objects
     @s = stub(:score => 1)
-    @e_src = stub(:sentiment_towards => @s)
-    @e_dst = stub(:sentiment_towards => @s)
+    @e_src = stub(:sentiment_toward => @s)
+    @e_dst = stub(:sentiment_toward => @s)
   end
 
   it "should instantiate with a context as a hash" do
