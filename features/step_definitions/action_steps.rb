@@ -16,9 +16,10 @@ end
 Given /^(\w+) performs the action Murder on (\w+)$/ do |name_src, name_dst|
   @action = Actions::Murder.new(:source       => @entities[name_src],
                               :destination  => @entities[name_dst])
-  @self.react_to!(@action)
+end
 
-  @entities[name_src].sentiment_toward.score.should == 1
+Given /^I react to the action$/ do
+  @self.react_to!(@action)
 end
 
 Then /^the action should have the effect on (\w+) as:$/ do |name, table|

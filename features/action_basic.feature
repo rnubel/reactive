@@ -18,6 +18,7 @@ Feature: Actions
     Then the action should have the effect on Bob as:
       | like  |   -1   |
       | fear  |   1   |
+    When I react to the action
     Then my feelings toward Bob should be:
       | like  |   0   |
       | fear  |   1   |
