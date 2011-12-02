@@ -1,10 +1,12 @@
 # Feelings of the observer towards another
 # entity.
-require 'active_support/core_ext/hash'
 
 class Feelings
   def initialize(hash)
-    @attributes = hash.symbolize_keys!
+    @attributes = {}
+    hash.each do |key, value| 
+      @attributes[key.to_sym] = value.to_f
+    end
   end
 
   def [](key)

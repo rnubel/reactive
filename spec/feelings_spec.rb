@@ -7,9 +7,16 @@ describe Feelings do
     f.should_not be_nil
   end
 
-  it "should force attribute to be symbols" do
+  it "should force attributes to be symbols" do
     f = Feelings.new("a" => 1) 
 
+    f[:a].should == 1
+  end
+
+  it "should force values to be fixnums" do
+    f = Feelings.new(:a => "1") 
+
+    f[:a].should be_a Numeric
     f[:a].should == 1
   end
 
