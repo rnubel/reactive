@@ -7,6 +7,12 @@ describe Feelings do
     f.should_not be_nil
   end
 
+  it "should force attribute to be symbols" do
+    f = Feelings.new("a" => 1) 
+
+    f[:a].should == 1
+  end
+
   it "should override the [] operator to access its values" do
     f = Feelings.new(:a => 1) 
 
