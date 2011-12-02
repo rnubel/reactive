@@ -17,7 +17,7 @@ class Feelings
     @attributes
   end
 
-  def update_attribute_by(attr, value)
+  def change_attribute_by(attr, value)
     @attributes[attr] += value
   end
 
