@@ -15,6 +15,9 @@ Feature: Actions
       | like  |   1   |
       | fear  |   0   |
     When Bob performs the action Murder on Bill
+    Then the action should have the effect on Bob as:
+      | like  |   -1   |
+      | fear  |   1   |
     Then my feelings toward Bob should be:
       | like  |   0   |
       | fear  |   1   |

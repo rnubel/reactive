@@ -14,9 +14,16 @@ Given /^I have feelings towards (\w+) currently as:$/ do |name, table|
 end
 
 Given /^(\w+) performs the action Murder on (\w+)$/ do |name_src, name_dst|
-  action = Actions::Murder.new(:source       => @entities[name_src],
+  @action = Actions::Murder.new(:source       => @entities[name_src],
                               :destination  => @entities[name_dst])
-  @self.react_to!(action)
+  @self.react_to!(@action)
+
+  @entities[name_src].sentiment_toward.score.should == 1
+end
+
+Then /^the action should have the effect on (\w+) as:$/ do |name, table|
+  effect = @action.compute_effect
+  effect.feelings_change[@entities[name]].should == Feelings.new(table.rows_hash).to_hash
 end
 
 Then /^my feelings toward (\w+) should be:$/ do |name, table|
@@ -25,3 +32,6 @@ Then /^my feelings toward (\w+) should be:$/ do |name, table|
   @entities[name].feelings_toward.should == expected_feelings
 end
 
+Then /^my sentiment towards (\w+) should be (.+)$/ do |name, score|
+  @entities[name].sentiment_toward.should == Sentiment.new(score.to_f)
+end
