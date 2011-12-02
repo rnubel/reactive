@@ -19,6 +19,7 @@ class Self
     # Apply it to our emotions.
     effect.update_emotions(self.emotions)
 
-    # TODO: apply to entities involved.
+    # Apply to entities involved.
+    effect.update_feelings
   end
 end

@@ -27,12 +27,23 @@ describe Self do
     eff = mock()
 
     a.expects(:compute_effect).once.returns(eff)
+    eff.expects(:update_feelings).returns(nil)
     eff.expects(:update_emotions).with(s.emotions).returns(nil)
 
     s.react_to!(a)
 
   end
 
+  it "should update feelings for entities based on an action's effect" do
+    s = Self.new(mock())
+    s.emotions = mock()
+    eff = mock()
+    eff.expects(:update_emotions).with(s.emotions).returns(nil)
+    eff.expects(:update_feelings).returns(nil)
+    a = mock(:compute_effect => eff)
+
+    s.react_to!(a)
+  end
 end
 
 
