@@ -39,4 +39,13 @@ describe Feelings do
 
     f[:a].should == 0
   end
+
+  it "should compare based on attrs and values" do
+    f1 = Feelings.new(:a => 1, :b => 0)
+    f2 = Feelings.new(:a => 1, :b => "0")
+    f3 = Feelings.new(:a => 0, :b => 0)
+
+    f1.should == f2
+    f2.should_not == f3
+  end
 end

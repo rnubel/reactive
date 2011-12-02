@@ -20,4 +20,8 @@ class Feelings
   def update_attribute_by(attr, value)
     @attributes[attr] += value
   end
+
+  def ==(other)
+    self.to_hash == other.to_hash
+  end
 end
