@@ -1,4 +1,6 @@
-Dir[File.expand_path("lib/reactive/*.rb")].each do |file|
-  require file
-end
-
+require "reactive/self"
+require "reactive/action"
+require "reactive/action_murder"
+require "reactive/personality"
+require "reactive/sentiment"
+require "reactive/entity"
