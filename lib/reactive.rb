@@ -1,6 +1,3 @@
-require "reactive/self"
-require "reactive/action"
-require "reactive/action_murder"
-require "reactive/personality"
-require "reactive/sentiment"
-require "reactive/entity"
+Dir["reactive/*.rb].each do |file|
+  require file
+end
