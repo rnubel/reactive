@@ -1,3 +1,4 @@
-Dir["reactive/*.rb"].each do |file|
-  require File.expand_path(file)
+Dir[File.expand_path("lib/reactive/*.rb")].each do |file|
+  require file
 end
+
