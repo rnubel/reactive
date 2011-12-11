@@ -1,3 +1,3 @@
-Dir["reactive/*.rb"].each do |file|
+Dir["reactiveai/*.rb"].each do |file|
   require file
 end
