@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.description = "Work in progress."
   s.authors     = ["Robert Nubel"]
   s.email       = 'robert.nubel@gmail.com'
-  s.files       = ["lib/reactive.rb"]
+  s.files       = ["lib/reactiveai.rb"]
   s.homepage    =
     'http://github.com/rnubel/reactive'
 end
