@@ -1,5 +1,3 @@
-require File.expand_path('bootstrap')
-
 class Effect
   # Only for testing/comparison
   attr_reader :emotions_change, :feelings_change

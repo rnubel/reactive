@@ -1,5 +1,3 @@
-require File.expand_path('bootstrap')
-
 # The main class which represents one "worldview". It should
 # serve as the API for anything involving the observer: their
 # feelings towards entities, registering events, etc.
