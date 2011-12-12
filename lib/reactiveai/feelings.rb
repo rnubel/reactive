@@ -1,7 +1,7 @@
-# Feelings of the observer towards another
+# Reactive::Feelings of the observer towards another
 # entity.
 
-class Feelings
+class Reactive::Feelings
   def initialize(hash)
     @attributes = {}
     hash.each do |key, value| 

@@ -1,29 +1,29 @@
 require File.expand_path('spec/spec_helper')
 
-describe Self do
+describe Reactive::Self do
   it "should instantiate with a personality" do
     pers = mock()
-    s = Self.new(pers)
+    s = Reactive::Self.new(pers)
 
     s.personality.should == pers
   end
 
   it "should have emotions" do
-    s = Self.new(mock())
+    s = Reactive::Self.new(mock())
 
     s.should respond_to(:emotions)
   end
 
   it "should be able to react to an action" do
-    s = Self.new(mock())
+    s = Reactive::Self.new(mock())
 
     s.should respond_to :react_to!
   end
 
   it "should update emotions based on an action's effect" do
-    s = Self.new(mock())
+    s = Reactive::Self.new(mock())
     s.emotions = mock()
-    a = Action.new
+    a = Reactive::Action.new
     eff = mock()
 
     a.expects(:compute_effect).once.returns(eff)
@@ -35,7 +35,7 @@ describe Self do
   end
 
   it "should update feelings for entities based on an action's effect" do
-    s = Self.new(mock())
+    s = Reactive::Self.new(mock())
     s.emotions = mock()
     eff = mock()
     eff.expects(:update_emotions).with(s.emotions).returns(nil)

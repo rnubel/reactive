@@ -1,3 +1,7 @@
+module Reactive
+
+end
+
 require 'reactiveai/self'
 require 'reactiveai/emotions'
 require 'reactiveai/personality'

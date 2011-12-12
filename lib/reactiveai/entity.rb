@@ -29,6 +29,6 @@ class Entity
       end
     end
 
-    return Sentiment.new(score)
+    return Reactive::Sentiment.new(score)
   end
 end

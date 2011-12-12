@@ -1,4 +1,4 @@
-class Effect
+class Reactive::Effect
   # Only for testing/comparison
   attr_reader :emotions_change, :feelings_change
 

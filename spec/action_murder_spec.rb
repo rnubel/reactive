@@ -1,6 +1,6 @@
 require File.expand_path('spec/spec_helper')
 
-describe Actions::Murder do
+describe Reactive::Actions::Murder do
   before :each do
     # Mock out objects
     @s = stub(:score => 1)
@@ -9,29 +9,29 @@ describe Actions::Murder do
   end
 
   it "should instantiate with a context as a hash" do
-    action = Actions::Murder.new({})
+    action = Reactive::Actions::Murder.new({})
 
     action.should_not be_nil
   end
 
   it "should pull out source and dest entities from context" do
-    action = Actions::Murder.new({:source => @e_src, :destination => @e_dst})
+    action = Reactive::Actions::Murder.new({:source => @e_src, :destination => @e_dst})
 
     action.source_entity.should == @e_src
     action.destination_entity.should == @e_dst
   end
 
-  it "should compute its effect as an Effect" do
-    action = Actions::Murder.new({:source => @e_src, :destination => @e_dst})
+  it "should compute its effect as an Reactive::Effect" do
+    action = Reactive::Actions::Murder.new({:source => @e_src, :destination => @e_dst})
 
-    action.compute_effect.should be_an(Effect)
+    action.compute_effect.should be_an(Reactive::Effect)
   end
 
   it "should compute the correct effect given a specific context" do
 
-    action = Actions::Murder.new({:source => @e_src, :destination => @e_dst})
+    action = Reactive::Actions::Murder.new({:source => @e_src, :destination => @e_dst})
 
-    expected_effect = Effect.new(
+    expected_effect = Reactive::Effect.new(
       {}, # Not sure yet
       {
         @e_src => { :like => -1, :fear => 1 }

@@ -1,5 +1,5 @@
 # Represents the current emotional state of an entity. Changes often.
-class Emotions
+class Reactive::Emotions
   def initialize
   end
 

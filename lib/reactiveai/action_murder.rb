@@ -1,4 +1,4 @@
-module Actions
+module Reactive::Actions
   class Murder
     attr_accessor :source_entity, :destination_entity
     def initialize(context)
@@ -20,7 +20,7 @@ module Actions
         feelings_change[attr] = val * sentiment_dst.score
       end
 
-      Effect.new({}, { @source_entity => feelings_change })
+      Reactive::Effect.new({}, { @source_entity => feelings_change })
     end
   end
 end

@@ -1,3 +1,3 @@
-class Action
+class Reactive::Action
 
 end

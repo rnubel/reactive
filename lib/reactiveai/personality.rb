@@ -1,6 +1,6 @@
-# Personality of the observer
+# Reactive::Personality of the observer
 
-class Personality
+class Reactive::Personality
   def initialize(hash)
     @attributes = hash
   end

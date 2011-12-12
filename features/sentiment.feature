@@ -1,6 +1,6 @@
-Feature: Sentiment
-  In order to encapsulate the complex Feelings model into a simple, static interface
-  I want to be able to be able to compute a Sentiment for each Entity
+Feature: Reactive::Sentiment
+  In order to encapsulate the complex Reactive::Feelings model into a simple, static interface
+  I want to be able to be able to compute a Reactive::Sentiment for each Entity
   
   Scenario: Liked entity
     Given I have a personality of:
