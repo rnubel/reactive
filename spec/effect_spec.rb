@@ -12,7 +12,7 @@ describe Reactive::Effect do
   end
 
   it "should instantiate with an emotions delta and feelings delta" do
-    ent = Entity.new
+    ent = mock()
     e = Reactive::Effect.new({:happiness => -1}, { ent => {:like => -1} })
 
     e.should_not be_nil

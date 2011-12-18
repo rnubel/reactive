@@ -2,7 +2,7 @@
 # itself is agnostic except for some connection you are expected
 # to provide.
 
-class Entity
+class Reactive::Entity
   attr_accessor :name
   attr_accessor :feelings_toward
 
