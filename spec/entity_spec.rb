@@ -6,7 +6,10 @@ describe Reactive::Entity do
   end
 
   it "should instantiate with default arguments" do
-    Reactive::Entity.new.should_not be_nil
+    e = Reactive::Entity.new
+    
+    e.should_not be_nil
+    e.feelings_toward.should_not be_nil
   end
 
   it "should accept a name as an instantating argument" do

@@ -8,6 +8,7 @@ class Reactive::Entity
 
   def initialize(args={})
     @name = args[:name] || ""
+    @feelings_toward = args[:feelings_toward] || {}
   end
 
   def perform(action)
